@@ -41,9 +41,9 @@
       <h1>Hello AWS KMS!<br/><small>Field level encryption</small></h1>
     </section>
 
-    <section class="slide">
+    <section class="slide" id='what'>
       <h2>What do we want?</h2>
-      <p>Field level encryption for ultimate sensitive data</p>
+      <p>Field level encryption for super sensitive data, such as</p>
       <ul>
         <li>Credit Cards</li>
         <li>Personally Identifiable Information (PII)</li>
@@ -52,38 +52,55 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Paranoia_HLM_logo.gif" alt="Kitties">
     </section>
 
-    <section class="slide">
+    <section class="slide" id='components'>
       <h2>Components</h2>
       <ul>
         <li>The data</li>
-        <li>Customer Master Key (CMK), to encrypt the data key</li>
-        <li>Data key - one per piece of encrypted data</li>
-        <li>Data key</li>
+        <li>Cipher, such as AES256, PGP, RSA, etc</li>
+        <li>Encryption library (don't write your own, just don't)</li>
+        <li>Customer Master Key (CMK), used to encrypt the data key</li>
+        <li>Data key - use a new data key per piece of encrypted data</li>
+        <li>The Data Key</li>
       </ul>
       <img src="images/three-keys.jpg" alt="data keys">
     </section>
 
-    <section class="slide">
+    <section class="slide" id='pros-cons'>
       <h2>Pros &amp; Cons</h2>
-      <table style="border-spacing:50px">
-        <tr>
-          <th>Pros</th>
-          <th>&nbsp;</th>
-          <th>Cons</th>
-        </tr><tr>
-          <td>Secure</td>
-          <td></td>
-          <td>Lock in</td>
-        </tr><tr>
-          <td>Easy</td>
-          <td></td>
-          <td>Latency</td>
-        </tr><tr>
-          <td>More data transfer</td>
-          <td></td>
-        </tr>
-      </table>
+      <p>Pros and Cons of using AWS KMS for field Level encryption</p>
+      <h4>Pros</h4>
+      <ul>
+        <li>Secure</li>
+        <li>Easy</li>
+        <li>Regularly improved</li>
+      </ul>
+      <h4>Cons</h4>
+      <ul>
+        <li>Vendor lock in ish/data portability</li>
+        <li>Extra Latency, extra data to store &amp; transfer</li>
+      </ul>
       <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Paranoia_HLM_logo.gif" alt="Kitties">
+    </section>
+
+    <section class="slide" id='show-me-code'>
+      <h2>SHOW ME THE CODE!</h2>
+      <p>Example data structure</p>
+      <pre>
+{
+  encrypted_photo_of_me_naked: 'notreally',
+  encrypted_data_key: 'theencrypteddatakeymaybeanaes256'
+}
+      </pre>
+    </section>
+
+    <section class="slide" id='helpful-libs'>
+      <h2>Some helpful libs*</h2>
+      <ul>
+        <li><a href='https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html'>AWS crypto libs, cli, Python &amp; Java</a></li>
+        <li><a href='https://www.npmjs.com/package/aes-js'>aes-js</a></li>
+        <li><a href='https://nodejs.org/api/crypto.html'>nodejs crypto</a></li>
+      </ul>
+      <small>* Note: Not an endorsement of these libs, please consult <strike>a financial</strike> an IT Security advisor to consider your specific requirements and circumstances, past performance is in no way an indicator of future performance...</small>
     </section>
 
     <section class="slide">
@@ -92,8 +109,8 @@
 
       <!-- Add font awesome icons -->
       <ul style="list-style:none;">
-        <li><a href="#" class="fa fa-twitter"></a> krutisfood</li>
-        <li><a href="#" class="fa fa-github"></a> krutisfood</li>
+        <li><a href="https://twitter.com/krutisfood" class="fa fa-twitter"></a> krutisfood</li>
+        <li><a href="https://github.com/krutisfood" class="fa fa-github"></a> krutisfood</li>
       </ul>
     </section>
 
