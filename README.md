@@ -13,7 +13,7 @@ Authenticate to an AWS Account
 
 Create Customer Master Key
 ```
-➜  hello-aws-kms git:(gh-pages) ✗ aws kms create-key --description "krut's test key"
+➜  hello-aws-kms git:(gh-pages) ✗ AWS_DEFAULT_REGION='us-west-1' aws kms create-key --description "krut's test key"
 ```
 Note the arn from the create key, we'll pass this in to the following command.
 
@@ -29,7 +29,7 @@ Decrypt the file, not the absence of the master key because KMS is smart enough 
 
 Cleanup after yourself by deleting the CMK.  *CAUTION!* Only do this to your own temporary key, read <a href='http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html#deleting-keys-scheduling-key-deletion-cli'>Deleting Customer Master Keys</a> if you want more details.
 ```
-➜  hello-aws-kms git:(gh-pages) ✗ aws kms schedule-key-deletion --key-id 1234abcd-12ab-34cd-56ef-1234567890ab --pending-window-in-days 1
+➜  hello-aws-kms git:(gh-pages) ✗ AWS_DEFAULT_REGION='us-west-1' aws kms schedule-key-deletion --key-id 1234abcd-12ab-34cd-56ef-1234567890ab --pending-window-in-days 7
 ```
 
 ## Acknowledgements and useful links
