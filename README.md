@@ -1,6 +1,6 @@
-# Hello AWS KMS Ligthning Talk
+# Hello AWS KMS Lightning Talk
 
-Short talk covering field level encryption using wrapped data keys and AWS KMS.
+Short talk about field level encryption using envelope encryption, also known as wrapped data keys, with AWS KMS.
 
 ## Live Demo
 
