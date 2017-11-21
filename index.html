@@ -49,18 +49,17 @@
         <li>Personally Identifiable Information (PII),</li>
         <li>Naked photos of yourself</li>
       </ul>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Paranoia_HLM_logo.gif" alt="Kitties">
+      <img src="images/hacker_2.png" alt="Hacker Image c/o CHRISTIAN SCHAUER / FLICKR CREATIVE COMMONS">
     </section>
 
     <section class="slide" id='components'>
-      <h2>Components</h2>
+      <h2><strike>When do we want it?</strike> Components</h2>
       <ul>
         <li>The data,</li>
         <li>Cipher, such as AES256, PGP, RSA, choose your own adventure,</li>
         <li>Encryption library (<a href='https://security.stackexchange.com/questions/18197/why-shouldnt-we-roll-our-own'>don't write your own crypto, just don't</a>),</li>
         <li>Customer Master Key (CMK), used to encrypt the data key (4kb data max),</li>
         <li>Data key - use a new data key per piece of encrypted data</li>
-        <li>The Data Key</li>
       </ul>
       <img src="images/three-keys.jpg" alt="data keys">
     </section>
@@ -74,6 +73,7 @@
     <section class="slide" id='pros-cons'>
       <h2>Pros &amp; Cons</h2>
       <p>Pros and Cons of using AWS KMS for field Level encryption</p>
+      <img style="float:right" src="https://upload.wikimedia.org/wikipedia/commons/7/77/Paranoia_HLM_logo.gif" alt="Kitties">
       <h4>Cons</h4>
       <ul>
         <li>Data portability - vendor lock-in-sorta,</li>
@@ -88,7 +88,6 @@
         <li>Lower latency, not posting/returning large data packets,</li>
         <li>Data Portability using multiple CMKs</li>
       </ul>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Paranoia_HLM_logo.gif" alt="Kitties">
     </section>
 
     <section class="slide" id='show-me-code'>
